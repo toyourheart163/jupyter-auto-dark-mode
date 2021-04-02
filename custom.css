@@ -1,0 +1,155 @@
+/*
+ * Author: Mikele
+ * Repo: https://github.com/toyourheart163/jupyter-audo-dark-mode
+ * Date: 2021/04/02
+ * Usage: put custom.css in ~/.jupyter/custom
+ */
+:root {
+  --background-color: #f7f6ee;
+  --secondary-color: #fbfefb;
+  --text-dark: #101010;
+  --text: #333333;
+  --text-light: #7b7b85;
+  --text-lighter: #ababab;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1e1f23;
+    --secondary-color: #232428;
+    --text-dark: #efefef;
+    --text: #c4c5c9;
+    --text-light: #6c6d71;
+    --text-lighter: #8e8f93;
+    --yellow: #e6db74;
+    --orange: #fd971f;
+    --red: #f92672;
+    --magenta: #f92672;
+    --violet: #ae81ff;
+    --blue: #66d9ef;
+    --cyan: #529b2f;
+    --green: #a6e22e;
+    --cc-input-fg: gray;
+    --cc-input-bg: #282828;
+  }
+  img {
+    filter: brightness(0.8) contrast(1.2);
+  }
+}
+
+body,
+#menus,
+.notebook_app,
+#notebook-container,
+.btn-group > .btn-default {
+  background: var(--background-color);
+  color: var(--text);
+}
+
+.CodeMirror-cursors,
+#header {
+  background-color: var(--background-color) !important;
+  color: var(--text);
+}
+.CodeMirror,
+.CodeMirror-gutter {
+  background-color: var(--cc-input-bg);
+  color: var(--text);
+}
+.CodeMirror-hscrollbar {
+  background-color: var(--background-color);
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid var(--text-lighter);
+}
+
+/* seconddary */
+.list_container,
+.dropdown-menu,
+#notebook_list_header {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+}
+
+.panel-heading {
+  background-color: var(--secondary-color) !important;
+}
+
+.cc-input-bg {
+  background-color: var(--cc-input-bg);
+}
+
+/* monokai codemirror colors */
+.cm-selected {
+  color: #49483e;
+}
+.cm-gutters {
+  color: #49483e;
+}
+.cm-comment {
+  color: #75715e;
+}
+.cm-latex {
+  color: #529b2f;
+}
+.cm-linenumber {
+  color: var(--disabled);
+}
+.cm-variable {
+  color: var(--cc-input-fg);
+}
+.cm-s-ipython span.cm-variable {
+  color: var(--cc-input-fg);
+}
+.cm-error {
+  color: var(--selected-error);
+}
+
+.cm-atom,
+.cm-number,
+.cm-tag,
+.cm-storage {
+  color: var(--violet);
+}
+.cm-keyword {
+  color: var(--red);
+}
+.cm-meta,
+.cm-variable3 {
+  color: var(--orange);
+}
+.cm-string {
+  color: var(--yellow);
+}
+
+.cm-property,
+.cm-attribute,
+.cm-operator,
+.cm-builtin,
+.cm-variable2,
+.cm-link,
+.cm-def,
+.cm-entity {
+  color: var(--green);
+}
+
+div.output_area pre {
+  color: gray;
+}
+
+/* nav dropdown menu */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: var(--text);
+}
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > .dropdown-menu > li > a:hover,
+/* notebook_app filename hover */
+.list_item:hover, 
+.list_item:hover .list_item {
+  background-color: var(--background-color);
+}
+
+/* dataframe */
+.rendered_html tbody tr:nth-child(odd) {
+  background: var(--secondary-color);
+}
